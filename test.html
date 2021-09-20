@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gradient-to-b h-screen from-blue-700 to-blue-400">
+    <div class="flex flex-col items-center justify-center">
+      <div class="w-96 border border-gray-400">
+        <h1
+          class="
+            flex-col
+            items-center
+            justify-center
+            text-base text-center text-white
+            font-bold
+            py-4
+            m-1
+            border border-gray-400
+          "
+        >
+          WEATHER SEARCH
+        </h1>
+        <form
+          class="
+            flex flex-row
+            items-center
+            justify-center
+            py-4
+            m-1
+            border border-gray-400
+          "
+        >
+          <input
+            type="text"
+            class="
+              h-8
+              w-52
+              pl-2
+              pb-1
+              rounded-lg
+              text-blue-900
+              bg-blue-100
+              focus:bg-white
+              focus:border-yellow-200
+              focus:outline-none
+              focus:ring-2
+              focus:ring-blue-300
+              shadow-md
+            "
+            placeholder="search by city or zip code"
+          /><button
+            class="
+              ml-2
+              h-8
+              w-20
+              bg-yellow-400
+              uppercase
+              text-xs
+              font-semibold
+              shadow-md
+              rounded-lg
+              border-none
+              hover:bg-yellow-500
+              focus\:ring-1
+            "
+          >
+            Search
+          </button>
+        </form>
+        <p
+          class="
+            border
+            text-center text-white
+            font-semibold
+            uppercase
+            m-1
+            border-gray-400
+          "
+        >
+          currently sunny
+        </p>
+        <div
+          class="
+            m-1
+            border border-gray-400
+            flex flex-row
+            items-center
+            justify-center
+          "
+        >
+          <img
+            class="w-44 border border-gray-400"
+            src="src/assets/images/113.png"
+            alt=""
+          />
+          <div class="flex flex-col border border-gray-400">
+            <p class="text-2xl text-yellow-400 font-bold">98.5&deg; F</p>
+            <div class="text-white font-semibold">
+              <p>Wind: 9.4 mph</p>
+              <p>Precip: 0.0 in</p>
+              <p>Pressure: 29.9 in</p>
+            </div>
+          </div>
+        </div>
+        <p class="py-2 text-center text-blue-300 uppercase font-bold">
+          3-day weather forecast
+        </p>
+        <div
+          class="m-1 pt-2 flex flex-row justify-center border border-gray-400"
+        >
+          <div class="pl-3">
+            <p class="pt-1 text-white font-bold uppercase">sunday</p>
+            <p class="text-blue-300 font-semibold">August 29, 2021</p>
+          </div>
+          <div class="ml-9 flex flew-row border border-gray-300">
+            <img src="src/assets/images/116.png" alt="" />
+            <p
+              class="
+                p-4
+                text-yellow-400
+                font-bold
+                align-middle
+                border border-gray-400
+              "
+            >
+              98.5&deg; F
+            </p>
+          </div>
+        </div>
+        <div
+          class="m-1 pt-2 flex flex-row justify-center border border-gray-400"
+        >
+          <div class="pl-3">
+            <p class="pt-1 text-white font-bold uppercase">sunday</p>
+            <p class="text-blue-300 font-semibold">August 29, 2021</p>
+          </div>
+          <div class="ml-9 flex flew-row">
+            <img src="src/assets/images/116.png" alt="" />
+            <p
+              class="
+                p-4
+                text-yellow-400
+                font-bold
+                align-middle
+                border border-gray-400
+              "
+            >
+              98.5&deg; F
+            </p>
+          </div>
+        </div>
+        <div
+          class="m-1 pt-2 flex flex-row justify-center border border-gray-400"
+        >
+          <div class="pl-3">
+            <p class="pt-1 text-white font-bold uppercase">sunday</p>
+            <p class="text-blue-300 font-semibold">August 29, 2021</p>
+          </div>
+          <div class="ml-9 flex flew-row">
+            <img src="src/assets/images/116.png" alt="" />
+            <p
+              class="
+                p-4
+                text-yellow-400
+                font-bold
+                align-middle
+                border border-gray-400
+              "
+            >
+              98.5&deg; F
+            </p>
+          </div>
+        </div>
+        <div class="p-7 text-sm text-center text-white">
+          Powered by
+          <a href="https://www.weatherapi.com/" title="Free Weather API"
+            >WeatherAPI.com</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
