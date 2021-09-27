@@ -20,6 +20,11 @@ function useWeather() {
         .then((response) => {
           //   console.log(response.data);
           setCityLocation(response.data);
+        })
+        .catch((error) => {
+          if (error.response) {
+            console.log('Error: ' + error.message);
+          }
         });
     };
     loadCityLocation();
