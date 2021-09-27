@@ -1,7 +1,7 @@
 {
   "name": "weatherapp-by-elugens",
   "version": "0.1.1",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@craco/craco": "^6.3.0",
     "@testing-library/jest-dom": "^5.14.1",
