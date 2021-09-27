@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="h-screen bg-gradient-to-b from-blue-700 to-blue-400">
+    <div class="flex flex-col items-center justify-center">
+      <div class="border border-gray-400 w-96">
+        <h1
+          class="flex-col items-center justify-center py-4 m-1 text-base font-bold text-center text-white border border-gray-400 "
+        >
+          WEATHER SEARCH
+        </h1>
+        <form
+          class="flex flex-row items-center justify-center py-4 m-1 border border-gray-400 "
+          onSubmit="{handleSubmit}"
+        >
+          <input class="h-8 pb-1 pl-2 text-blue-900 bg-blue-100 rounded-lg shadow-md w-52 focus:bg-white focus:border-yellow-200 focus:outline-none focus:ring-2 focus:ring-blue-300" ref={inputRef}
+          value={searchValue} type='text' placeholder=' search by city or zip'
+          onClick={handleClick} onChange={handleChange} onBlur={() => {
+          setTimeout(() => { setSuggestions([]); }, 300); }} /><button
+            class="
+              ml-2
+              h-8
+              w-20
+              bg-yellow-400
+              uppercase
+              text-xs
+              font-semibold
+              shadow-md
+              rounded-lg
+              border-none
+              hover:bg-yellow-500
+              focus\:ring-1
+            "
+            type='submit'
+          >
+            Search
+          </button>
+        </form>
+        {/* suggestions start */}
+        <div className='flex flex-col items-center justify-center'>
+          <div className='border-2 rounded-lg border-gray-500 absolute top-32 z-40'>
+            {suggestions &&
+              suggestions.map((suggestion, i) => (
+                <div
+                  className='border-b-2 border-l-2 border-r-2 py-1 w-80 bg-white hover:bg-blue-50 cursor-pointer truncate'
+                  key={i}
+                  onClick={() => onSuggestHandler(suggestion.name)}
+                >
+                  {suggestion.name}
+                </div>
+              ))}
+          </div>
+        </div>
+        {typeof posts.current != 'undefined' ? (
+        <p
+          class="m-1 font-semibold text-center text-white uppercase border border-gray-400 "
+        >
+          currently {posts.current.condition.text} today
+        </p>
+        <div
+          class="flex flex-row items-center justify-center m-1 border border-gray-400 "
+        >
+          <img
+            class="border border-gray-400 w-44"
+            src={posts.current.condition.icon}
+            alt=""
+          />
+          <div class="flex flex-col border border-gray-400">
+            <p class="text-2xl font-bold text-yellow-400">{posts.current.temp_f}&deg; F</p>
+            <div class="font-semibold text-white">
+              <p>Wind: {posts.current.wind_mph}</p>
+              <p>Precip: {posts.current.precip_in} in</p>
+              <p>Pressure: {posts.current.pressure_in} in</p>
+            </div>
+          </div>
+        </div>
+        <p class="py-2 font-bold text-center text-blue-300 uppercase">
+          3-day weather forecast
+        </p>
+        {/* listing loop  */}
+            {forecast.length
+              ? forecast.map((day, index) => (
+        <div key={day.date}
+          class="flex flex-row justify-center pt-2 m-1 border border-gray-400"
+        >
+          <div class="pl-3">
+            <p class="pt-1 font-bold text-white uppercase">{getDay(day.date)}</p>
+            <p class="font-semibold text-blue-300">{day.date}</p>
+          </div>
+          <div class="flex border border-gray-300 ml-9 flew-row">
+            <img src={day.day.condition.icon} alt="" />
+            <p
+              class="p-4 font-bold text-yellow-400 align-middle border border-gray-400 "
+            >
+             {day.day.avgtemp_f}&deg; F
+            </p>
+          </div>
+        </div>
+         ))
+              : null}
+          </div>
+        ) : (
+          <div
+            className='m-1 text-center text-white
+            font-semibold
+            uppercase'
+          >
+            Start Your Search
+          </div>
+        )}
+        
+        <div class="text-sm text-center text-white p-7">
+          Powered by
+          <a href="https://www.weatherapi.com/" title="Free Weather API"
+            >WeatherAPI.com</a
+          >
+        </div>
+      </div>
+    </div>
+    );
+  </body>
+</html>

@@ -1,6 +1,6 @@
 {
-  "name": "weatherapp",
-  "version": "0.1.0",
+  "name": "weatherapp-by-elugens",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.3.0",
