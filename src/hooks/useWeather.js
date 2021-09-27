@@ -14,7 +14,7 @@ function useWeather() {
     const loadCityLocation = async () => {
       await axios
         .get(
-          `http://api.weatherapi.com/v1/search.json?key=${REACT_APP_WEATHER_KEY}&q=${searchValue}
+          `https://api.weatherapi.com/v1/search.json?key=${REACT_APP_WEATHER_KEY}&q=${searchValue}
 `
         )
         .then((response) => {
